@@ -1,0 +1,15 @@
+- name: test some looping
+  hosts: localhost
+  vars:
+    countdown: 5
+    somevar: []
+  tasks:
+    #- name: include in loop
+    #  ansible.builtin.import_tasks:
+    #    file: looptest.yml
+    #  #until: "{{ countdown | int == 0 }}"
+
+    - name: output
+      debug:
+        var: countdown
+      when: somevar[0] is not defined
