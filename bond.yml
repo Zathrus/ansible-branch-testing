@@ -1,0 +1,17 @@
+- name: "Compute and output IPv4 network prefix."
+  hosts: localhost
+  connection: local
+  gather_facts: true
+
+  vars:
+    bond_ipv4_address: "{{ ansible_facts['default_ipv4']['address'] }}"
+    bond_ipv4_netmask: "{{ ansible_facts['default_ipv4']['netmask'] }}"
+    bond_ipv4_address_with_netmask: "{{ bond_ipv4_address }}/{{ bond_ipv4_netmask }}"
+    #bond_ipv4_prefix: "{{ bond_ipv4_address_with_netmask | ipaddr('prefix') }}"
+    bond_ipv4_prefix: "{{ ( bond_ipv4_address ~ '/' ~ bond_ipv4_netmask ) | ipaddr('prefix') }}"
+
+  tasks:
+
+  - name: "Output variables' values."
+    ansible.builtin.debug:
+      msg: "{{ bond_ipv4_prefix }}"
