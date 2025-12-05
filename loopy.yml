@@ -11,5 +11,5 @@
 
     - name: output
       debug:
-        msg: "It's the final {{ countdown }}"
+        msg: "It's the {{ countdown }}"
       when: somevar[0] is not defined
