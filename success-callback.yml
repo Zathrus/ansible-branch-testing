@@ -1,0 +1,13 @@
+- name: Return success
+  hosts: localhost
+  become: false
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Succeed
+      ansible.builtin.debug:
+        msg:
+          - "ip: {{ ip_stat }}"
+          - "hostname: {{ hostname_stat }}"
+          - "{{ flies_stat[0] }} like a {{ flies_stat[1] }}"

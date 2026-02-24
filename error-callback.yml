@@ -1,0 +1,12 @@
+- name: Return error
+  hosts: localhost
+  become: false
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Fail
+      ansible.builtin.debug:
+        msg:
+          - "OH GOD WE'RE ALL GOING TO DIE"
+          - "ip: {{ ip_stat }}"
