@@ -1,0 +1,12 @@
+---
+# tasks file for provision
+- name: Do everything in one place
+  ansible.builtin.set_stats:
+    data:
+      ip_stat: "1.1.1.1"
+      hostname_stat: hostname_var
+      flies: 'banana'
+
+- name: Randomly succeed or fail
+  ansible.builtin.fail:
+  when: (2 | random) == 1

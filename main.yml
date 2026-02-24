@@ -1,0 +1,10 @@
+- name: Provision all the things
+  hosts: localhost
+  become: false
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Do it!
+      ansible.builtin.include_role:
+        name: provision
