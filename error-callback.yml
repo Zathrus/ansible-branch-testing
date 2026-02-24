@@ -9,4 +9,4 @@
       ansible.builtin.debug:
         msg:
           - "OH GOD WE'RE ALL GOING TO DIE"
-          - "ip: {{ ip_stat }}"
+          - "hostname: {{ hostname_stat }}"
