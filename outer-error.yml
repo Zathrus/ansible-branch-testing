@@ -6,7 +6,7 @@
 
   tasks:
     - name: Fail
-      ansible.builtin.fail:
+      ansible.builtin.debug:
         msg:
           - "Task failed successfully, but can we still access stats?"
           - "{{ ip_stat }}"
