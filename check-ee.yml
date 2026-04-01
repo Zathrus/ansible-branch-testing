@@ -1,7 +1,7 @@
 
 - name: Check for certain rpms
   hosts: localhost
-  connection_type: local
+  ansible_connection: local
   tasks:
     - name: list rpms
       ansible.builtin.command: "rpm -qa {{ rpm_list | default('') }}"
