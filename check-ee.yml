@@ -4,4 +4,4 @@
   connection_type: local
   tasks:
     - name: list rpms
-      ansible.builtin.command: "rpm -qa {{ rpm_list }}"
+      ansible.builtin.command: "rpm -qa {{ rpm_list | default('') }}"
